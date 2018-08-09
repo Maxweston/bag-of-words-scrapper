@@ -1,0 +1,22 @@
+{
+  "name": "bag-of-words-scrapper",
+  "version": "1.0.0",
+  "description": "bag of word web scrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maxweston/bag-of-words-scrapper.git"
+  },
+  "author": "max weston",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Maxweston/bag-of-words-scrapper/issues"
+  },
+  "homepage": "https://github.com/Maxweston/bag-of-words-scrapper#readme",
+  "dependencies": {
+    "x-ray": "^2.3.3"
+  }
+}
