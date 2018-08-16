@@ -1,36 +1,40 @@
 var Xray = require("x-ray");
 var x = Xray();
-var sportinglife;
-var wiki;
 
-x("https://www.sportinglife.com/", [
+let sportinglife = x("https://www.sportinglife.com/", [
   "p",
   "h1",
   "h2",
   "h3",
-  "h4",
-  "section",
-  "header"
-])(function(err, data) {
-  // console.log(data);
-  sportinglife = data;
+  "h4"
+]).then(res => {
+  return res;
 });
 
-var wiki = x("https://en.wikipedia.org/wiki/Gambling", [
+let wiki = x("https://en.wikipedia.org/wiki/Gambling", [
   "p",
   "h1",
   "h2",
   "h3",
-  "h4",
-  "section",
-  "header"
-])(function(err, data) {
-  // console.log(data);
-  wiki = data;
+  "h4"
+]).then(res => {
+  return res;
 });
 
-console.log(sportinglife);
-console.log(wiki);
-// x("https://en.wikipedia.org/wiki/Gambling", [
-//   fresh8: ".fresh8"
-// ]).write("other-results.json");
+async function compareText() {
+  console.log("here3");
+  let sp = await sportinglife;
+  let wki = await wiki;
+  sp = sp.join(" ");
+  wki = wki.join(" ");
+  sp = splitIntoWords(sp);
+  wki = splitIntoWords(wki);
+  console.log("sp:", sp);
+  console.log("wki:", wki);
+}
+
+function splitIntoWords(string) {
+  return string.split(" ");
+}
+
+compareText();
